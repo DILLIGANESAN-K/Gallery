@@ -24,109 +24,133 @@ Publish the website in the given URL.
 
 # PROGRAM :
 ```
-home page 
+index.html
 
-<div class="container--0-">
-  <svg
-    width="221"
-    height="72"
-    viewBox="0 0 221 72"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="221" height="72" fill="#524242"></rect>
-  </svg>
-  <div class="text-0-1-1">REGISTER</div>
-  <svg
-    width="226"
-    height="65"
-    viewBox="0 0 226 65"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="226" height="65" fill="#4C4545"></rect>
-  </svg>
-  <div class="text-0-1-3">LOGIN</div>
-  <img
-  src="data:image/jpeg;base64,/9j/"
-  /><img
-src="data:image/jpeg;base64,/9j/"
-  />
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-register page
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Photo Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-<div class="container--0-">
-  <div class="text-0-1-0">AI EVENT REGISTRATION FORM</div>
-  <svg
-    width="256"
-    height="68"
-    viewBox="0 0 256 68"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="256" height="68" fill="#D9D9D9"></rect></svg
-  ><svg
-    width="253"
-    height="59"
-    viewBox="0 0 253 59"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="253" height="59" fill="#D9D9D9"></rect></svg
-  ><svg
-    width="249"
-    height="62"
-    viewBox="0 0 249 62"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="249" height="62" fill="#D9D9D9"></rect></svg
-  ><svg
-    width="247"
-    height="80"
-    viewBox="0 0 247 80"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="247" height="80" fill="#D9D9D9"></rect></svg
-  ><img
-    src="data:image/jpeg;base64,/9j/+SZ"
-  /><svg
-    width="257"
-    height="59"
-    viewBox="0 0 257 59"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="257" height="59" fill="#D9D9D9"></rect>
-  </svg>
-  <div class="text-0-1-13">Email ID</div>
-</div>
+<body>
+    <h1>Interactive Photo Gallery</h1>
+    <div class="container">
+      <div class="gallery">
+        <img class="preview" alt="Saveetha round block" src="1.3.jpg" onmouseover="upDate(this)" onmouseout="unDo()">
+        <img class="preview" alt="Sec" src="1.2.jpg" onmouseover="upDate(this)" onmouseout="unDo()">
+        <img class="preview" alt="Saveetha Hotel" src="1.4.jpg" onmouseover="upDate(this)" onmouseout="unDo()">      
+        <img class="preview" alt="SIMATS" src="1.5.jpg" onmouseover="upDate(this)" onmouseout="unDo()">
+        <img class="preview" alt="SIMATS Engineering" src="1.1.jpg" onmouseover="upDate(this)" onmouseout="unDo()">
+      </div>
+      <div id="image">"Hover an image below to display here"</div>
+    </div>
+  </body>
+  
+<script src="indec.js"></script>
 
-contact page
-<div class="container--0-">
-  <img
-    src="data:image/png;base64,iVB"
-    />
-  <div class="text-0-1-1">
-    Thank you!<br />
-    we are eagerly waiting for your participation
-  </div>
-  <div class="text-0-1-2">
-    Contact us<br /><br />Mobile Number:<br />
-    8870864909<br />8870847322<br /><br />Email Id:rafi6@gmail.com
-  </div>
-  <img
-    src="data:image/jpeg;base64,/9j/"
-    />
-</div>
+</html>
+
+style.css
+
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Pacifico&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    margin: 2%;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-style: normal;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: white;
+    text-align: left;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.preview {
+    width: 150px;
+    border: 3px solid transparent;
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.preview:hover {
+    border-color: #4facfe;
+    transform: scale(1.05);
+}
+
+#image {
+    width: 575px;
+    height: 669px;
+    border: 5px solid #333;
+    background-color: #8e68ff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #ffffff;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+indec.js
+const imageDiv = document.getElementById("image");
+const originalImageUrl = "";
+const originalText = "Hover over an image below to display here.";
+
+function upDate(previewPic) {
+  imageDiv.style.backgroundImage = `url('${previewPic.src}')`;
+  imageDiv.innerHTML = previewPic.alt;
+}
+
+function unDo() {
+  imageDiv.style.backgroundImage = `url('${originalImageUrl}')`;
+  imageDiv.innerHTML = originalText;
+}
 ```
+
 # OUTPUT:
-![image](https://github.com/user-attachments/assets/16d77b18-6da0-4ef6-a141-16ef50d6dbf7)
-![image](https://github.com/user-attachments/assets/348f777a-7ecd-435a-ab3c-f0386aff529f)
-![image](https://github.com/user-attachments/assets/1a419963-d8cb-4f25-ad7c-49d6214576b8)
-![image](https://github.com/user-attachments/assets/3d19df78-30d0-4d16-9aa1-cc01e589aeae)
+![image](https://github.com/user-attachments/assets/79f863ec-7483-43a8-86ac-6c56005a6820)
+![image](https://github.com/user-attachments/assets/8ce5a85c-ca19-4d29-a88b-d5d272a42b9e)
+![image](https://github.com/user-attachments/assets/d8758412-2861-4072-b2d4-208246f04486)
+![image](https://github.com/user-attachments/assets/ae64d444-a896-46f8-a2fe-0097d38fa3f9)
+![image](https://github.com/user-attachments/assets/bffe7c79-b2ab-4243-86d2-4a79d3bd27cc)
 
 # RESULT:
 The program for designing an interactive image gallery using HTML, CSS and JavaScript is executed successfully.
